@@ -27,13 +27,14 @@ export const isProfileComplete = async () => {
       .eq('id', session.user.id)
       .single();
 
-    if (error || !profile) {
-      return false;
-    }
-
+    if (error || !profile) return false;
     return !!(profile.full_name && profile.role);
   } catch (error) {
     console.error('Error checking profile completion:', error);
     return false;
   }
 };
+
+export { supabase }
+
+export { isAuthenticated, isProfileComplete }
