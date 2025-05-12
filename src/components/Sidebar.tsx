@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { 
-  LayoutDashboard, 
-  Users, 
-  LogOut, 
-  UserCheck,
-  Bell,
-  BarChart,
-  Settings,
-  Star
+  LayoutDashboard,
+  LogOut
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
@@ -44,43 +38,7 @@ const Sidebar = () => {
       icon: <LayoutDashboard className="w-5 h-5" />,
       label: 'Tableau de bord',
       roles: ['RH', 'Sales', 'Tech', 'Manager'],
-    },
-    {
-      to: '/candidates',
-      icon: <Users className="w-5 h-5" />,
-      label: 'Candidats',
-      roles: ['RH', 'Sales', 'Tech', 'Manager'],
-    },
-    {
-      to: '/validate-candidates',
-      icon: <UserCheck className="w-5 h-5" />,
-      label: 'Candidats à valider',
-      roles: ['Sales', 'Tech', 'Manager'],
-    },
-    {
-      to: '/vivier',
-      icon: <Star className="w-5 h-5" />,
-      label: 'Vivier',
-      roles: ['RH', 'Sales', 'Tech', 'Manager'],
-    },
-    {
-      to: '/reminders',
-      icon: <Bell className="w-5 h-5" />,
-      label: 'Rappels',
-      roles: ['RH', 'Manager'],
-    },
-    {
-      to: '/statistics',
-      icon: <BarChart className="w-5 h-5" />,
-      label: 'Statistiques',
-      roles: ['Manager'],
-    },
-    {
-      to: '/admin',
-      icon: <Settings className="w-5 h-5" />,
-      label: 'Administration',
-      roles: ['Manager'],
-    },
+    }
   ];
 
   return (
