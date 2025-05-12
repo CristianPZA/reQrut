@@ -21,14 +21,15 @@ export const isProfileComplete = async () => {
     const { data: { session } } = await supabase.auth.getSession();
     if (!session) return false;
 
-    const { data: profile, error } = await supabase
+    const { data: profiles, error } = await supabase
       .from('user_profiles')
       .select('full_name, role')
-      .eq('id', session.user.id)
-      .single();
+      .eq('id', session.user.id);
 
-    if (error || !profile) return false;
-    return !!(profile.full_name && profile.role);
+    if (error || !profiles || profiles.length === 0) return false;
+    
+    const profile = profiles[0];
+    return !!(profile && profile.full_name && profile.role);
   } catch (error) {
     console.error('Error checking profile completion:', error);
     return false;
