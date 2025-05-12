@@ -34,7 +34,3 @@ export const isProfileComplete = async () => {
     return false;
   }
 };
-
-export { supabase }
-
-export { isAuthenticated, isProfileComplete }
