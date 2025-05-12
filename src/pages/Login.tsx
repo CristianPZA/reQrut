@@ -46,7 +46,7 @@ const Login = () => {
         <div className="text-center">
           <LogIn className="mx-auto h-12 w-12 text-gray-900" />
           <h2 className="mt-6 text-3xl font-bold text-gray-900">
-            Connexion CRM Pro
+            Connexion HR Portal
           </h2>
         </div>
         
