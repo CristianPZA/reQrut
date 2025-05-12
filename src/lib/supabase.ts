@@ -9,13 +9,11 @@ if (!supabaseUrl || !supabaseAnonKey) {
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-// Helper to check if user is authenticated
 export const isAuthenticated = async () => {
   const { data: { session } } = await supabase.auth.getSession();
   return !!session;
 };
 
-// Helper to check if user profile is complete
 export const isProfileComplete = async () => {
   try {
     const { data: { session } } = await supabase.auth.getSession();
